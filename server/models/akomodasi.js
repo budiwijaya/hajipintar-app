@@ -14,9 +14,7 @@ let akomodasiSchema = new Schema({
   //   required: true
   // }],
   alamat: { type: String, required: true },
-  fotoHotel: [{
-    type: String
-  }],
+  fotoHotel: { type: String },
   kloter: [{
     type: String,
     required: true

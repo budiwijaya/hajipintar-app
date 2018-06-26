@@ -18,13 +18,6 @@ class Akomodasi {
   }
 
   static createAkomodasi(req, res) {
-    let imageGallery = [];
-
-    for (var i = 0; i < req.files.length; i++) {
-      // console.log(req.files);
-        imageGallery.push(req.files[i].cloudStoragePublicUrl)
-    }
-
     AkomodasiModel.create({
       lokasi: req.body.lokasi,
       sektor: req.body.sektor,
@@ -33,7 +26,7 @@ class Akomodasi {
       kapasitas: req.body.kapasitas,
       // fasilitas: req.body.fasilitas,
       alamat: req.body.alamat,
-      fotoHotel:  imageGallery.cloudStoragePublicUrl,
+      fotoHotel:  req.file.cloudStoragePublicUrl,
       kloter: req.body.kloter
     })
     .then(dataAkomodasi => {
@@ -58,7 +51,7 @@ class Akomodasi {
         kapasitas: req.body.kapasitas,
         // fasilitas: req.body.fasilitas,
         alamat: req.body.alamat,
-        fotoHotel: req.file.originalname,
+        fotoHotel:  req.file.cloudStoragePublicUrl,
         kloter: req.body.kloter,
         updatedAt: new Date()
       }
