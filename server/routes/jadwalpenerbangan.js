@@ -6,4 +6,6 @@ const JadwalController = require('../controllers/jadwalpenerbangan');
 
 router.post('/', JadwalController.findJadwal);
 
+router.get('/', JadwalController.getJadwal);
+
 module.exports = router;
