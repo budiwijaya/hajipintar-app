@@ -8,7 +8,7 @@ class Siskohat {
   }
 
   static getJadwal(req, res) {
-    SiskohatModel.getJadwal(req.params.emb)
+    SiskohatModel.getJadwal(req.body.emb)
     .then(data => {
       res.send(data)
     })
