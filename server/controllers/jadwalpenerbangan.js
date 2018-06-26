@@ -1,33 +1,23 @@
 console.log('Controllers Jadwal Penerbangan\n');
 //
+const JadwalPenerbanganModel = require('../models/jadwalpenerbangan')
 const axios = require('axios');
 
-class Jadwal {
+class JadwalPenerbangan {
   constructor() {
 
   }
 
-  static findJadwal(req, res) {
-    // axios.get('http://10.100.100.120:8095/ws/getjadwalhp?tahun=1439&emb=JKS')
-      axios.post(`http://118.97.69.173:8095/ws/getjadwalhp?tahun=1439&emb=${req.body.emb}`)
-    .then(function(response){
-      console.log(response);
-    console.log(response.data); // ex.: { user: 'Your User'}
-    console.log(response.status); // ex.: 200
-    res.send(response.data)
-  });
-  }
-
-  static getJadwal(req, res) {
-    axios.get('http://118.97.69.173:8095/ws/getjadwalhp?tahun=1439&emb=JKS')
-    .then(function(response){
-      console.log(response);
-    console.log(response.data); // ex.: { user: 'Your User'}
-    console.log(response.status); // ex.: 200
-    res.send(response.data)
-  });
+  static penerbanganInfo(req, res) {
+    JamaahModel.findJadwalPenerbangan(req.body.noporsi)
+    .then(dataPenerbangan => {
+      res.send(dataPenerbangan)
+    })
+    .catch(err => {
+      res.send(err)
+    })
   }
 
 }
 
-module.exports = Jadwal;
+module.exports = JadwalPenerbangan;
