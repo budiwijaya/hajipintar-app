@@ -6,10 +6,4 @@ const JadwalController = require('../controllers/jadwalpenerbangan');
 
 router.get('/', JadwalController.findJadwal);
 
-// router.post('/', JadwalController.createJadwal);
-//
-// router.put('/:id', JadwalController.updateJadwal);
-//
-// router.delete('/:id', JadwalController.deleteJadwal);
-
 module.exports = router;
