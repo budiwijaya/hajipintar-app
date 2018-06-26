@@ -37,7 +37,7 @@ class Hajipedia {
     HajipediaModel.findOneAndUpdate({ _id : req.params.id }, {
       $set: {
         judul: req.body.judul,
-        deskripsi: req.body.deskripsi
+        deskripsi: req.body.deskripsi,
         updatedAt: new Date()
       }
     }, { new : true })
