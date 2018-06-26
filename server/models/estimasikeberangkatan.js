@@ -1,16 +1,29 @@
 console.log('Models Estimasi Keberangkatan\n');
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const request = require('request');
 
-let EstimasiKeberangkatanSchema = new Schema({
-  noPorsi: { type: Number, required: true },
-  namaJemaah: { type: String, required: true },
-  namaOrtu: { type: String, required: true },
-  provinsi: { type: String, required: true },
-  tahunKeberangkatan: { type: Number, required: true }
-}, { timestamps: true })
+class Estimasi {
+  constructor() {
 
-let estimasiKeberangkatan = mongoose.model('estimasiKeberangkatan', EstimasiKeberangkatanSchema);
+  }
 
-module.exports = estimasiKeberangkatan;
+  static findEstimasi(noporsi) {
+    let url = `http://118.97.69.173:8095/ws/getestimasihp?no_porsi=${noporsi}`
+    let promise = new Promise(function(resolve, reject) {
+      request({
+        url: url,
+        json: true
+      }, function(error, data) {
+        if(!error) {
+          resolve(data)
+        } else {
+          reject(error)
+        }
+      })
+    })
+    return promise;
+  }
+
+}
+
+module.exports = Estimasi;
