@@ -4,6 +4,6 @@ const express = require('express');
 const router = express.Router();
 const SiskohatController = require('../controllers/siskohat');
 
-router.get('/jadwal/:emb', SiskohatController.getJadwal);
+router.post('/jadwal', SiskohatController.getJadwal);
 
 module.exports = router;
