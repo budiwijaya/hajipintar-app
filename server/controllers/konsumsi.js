@@ -24,7 +24,7 @@ class Konsumsi {
       hariKonsumsi: req.body.hariKonsumsi,
       waktuKonsumsi: req.body.waktuKonsumsi,
       menuKonsumsi: req.body.menuKonsumsi,
-      fotoKonsumsi: req.file.originalname
+      fotoKonsumsi: req.file.cloudStoragePublicUrl
     })
     .then(dataKonsumsi => {
       res.send({
@@ -45,7 +45,7 @@ class Konsumsi {
         hariKonsumsi: req.body.hariKonsumsi,
         waktuKonsumsi: req.body.waktuKonsumsi,
         menuKonsumsi: req.body.menuKonsumsi,
-        fotoKonsumsi: req.file.originalname,
+        fotoKonsumsi: req.file.cloudStoragePublicUrl,
         updatedAt: new Date()
       }
     }, { new: true })
