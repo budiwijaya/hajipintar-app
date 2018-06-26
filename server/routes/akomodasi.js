@@ -23,9 +23,9 @@ const images = require('../helpers/image');
 
 router.get('/', AkomodasiController.findAllAkomodasi);
 
-router.post('/', images.multer.array('fotoHotel', 6), images.sendUploadToGCS, AkomodasiController.createAkomodasi);
+router.post('/', images.multer.single('fotoHotel'), images.sendUploadToGCS, AkomodasiController.createAkomodasi);
 
-router.put('/:id', images.multer.array('fotoHotel', 6), images.sendUploadToGCS, AkomodasiController.updateAkomodasi);
+router.put('/:id', images.multer.single('fotoHotel'), images.sendUploadToGCS, AkomodasiController.updateAkomodasi);
 
 router.delete('/:id', AkomodasiController.deleteAkomodasi);
 
