@@ -20,6 +20,7 @@ var kritiksaran = require('./routes/kritiksaran');
 var jadwalPenerbangan = require('./routes/jadwalpenerbangan');
 var estimasiKeberangkatan = require('./routes/estimasikeberangkatan');
 var hajipedia = require('./routes/hajipedia');
+var jamaah = require('./routes/jamaah');
 // var cuaca = require('./routes/cuaca');
 // var jadwalSholat = require('./routes/jadwalsholat');
 // var siskohat = require('./routes/siskohat');
@@ -47,6 +48,7 @@ app.use('/kritiksaran', kritiksaran);
 app.use('/jadwalpenerbangan', jadwalPenerbangan);
 app.use('/estimasi', estimasiKeberangkatan);
 app.use('/hajipedia', hajipedia);
+app.use('/jamaah', jamaah)
 // app.use('/siskohat', siskohat)
 // app.use('/cuaca', cuaca);
 // app.use('/jadwalsholat', jadwalSholat);
