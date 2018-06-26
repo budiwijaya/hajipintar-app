@@ -9,7 +9,7 @@ class JadwalPenerbangan {
   }
 
   static penerbanganInfo(req, res) {
-    JadwalPenerbanganModel.findJadwalPenerbangan(req.body.noporsi)
+    JadwalPenerbanganModel.findJadwalPenerbangan(req.body.emb)
     .then(dataPenerbangan => {
       res.send(dataPenerbangan)
     })
