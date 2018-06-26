@@ -4,12 +4,8 @@ const express = require('express');
 const router = express.Router();
 const EstimasiController = require('../controllers/estimasikeberangkatan');
 
-router.get('/', EstimasiController.findAllEstimasi);
+router.post('/', EstimasiController.findEstimasi);
 
-router.post('/', EstimasiController.createEstimasi);
-
-router.put('/:id', EstimasiController.updateEstimasi);
-
-router.delete('/:id', EstimasiController.deleteEstimasi);
+router.get('/', EstimasiController.getEstimasi);
 
 module.exports = router;
