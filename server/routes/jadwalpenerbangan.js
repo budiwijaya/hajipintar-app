@@ -4,12 +4,12 @@ const express = require('express');
 const router = express.Router();
 const JadwalController = require('../controllers/jadwalpenerbangan');
 
-router.get('/', JadwalController.findAllJadwal);
+router.get('/', JadwalController.findJadwal);
 
-router.post('/', JadwalController.createJadwal);
-
-router.put('/:id', JadwalController.updateJadwal);
-
-router.delete('/:id', JadwalController.deleteJadwal);
+// router.post('/', JadwalController.createJadwal);
+//
+// router.put('/:id', JadwalController.updateJadwal);
+//
+// router.delete('/:id', JadwalController.deleteJadwal);
 
 module.exports = router;
