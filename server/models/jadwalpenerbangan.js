@@ -1,17 +1,29 @@
 console.log('Models Jadwal Penerbangan\n');
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const request = require('request');
 
-let jadwalPenerbanganSchema = new Schema({
-  noKloter: { type: Number, required: true },
-  kategoriPenerbangan: { type: String, required: true },
-  keteranganPenerbangan: { type: String, required: true },
-  tanggalJadwal: { type: Date, required: true, default: Date.now },
-  namaBandara: { type: String, required: true },
-  noPesawat: { type: String, required: true }
-}, { timestamps: true })
+class JadwalPenerbangan {
+  constructor() {
 
-let jadwalPenerbangan = mongoose.model('jadwalPenerbangan', jadwalPenerbanganSchema);
+  }
 
-module.exports = jadwalPenerbangan;
+  static findJadwalPenerbangan(emb) {
+    let url = `http://118.97.69.173:8095/ws/getjadwalhp?tahun=1439&emb=${emb}`
+    let promise = new Promise(function(resolve, reject) {
+      request({
+        url: url,
+        json: true
+      }, function(error, data) {
+        if(!error) {
+          resolve(data)
+        } else {
+          reject(error)
+        }
+      })
+    })
+    return promise;
+  }
+
+}
+
+module.exports = JadwalPenerbangan;
