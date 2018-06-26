@@ -18,10 +18,10 @@ var konsumsi = require('./routes/konsumsi');
 var akomodasi = require('./routes/akomodasi');
 var kritiksaran = require('./routes/kritiksaran');
 var jadwalPenerbangan = require('./routes/jadwalpenerbangan');
+var estimasiKeberangkatan = require('./routes/estimasikeberangkatan');
 var hajipedia = require('./routes/hajipedia');
 // var cuaca = require('./routes/cuaca');
 // var jadwalSholat = require('./routes/jadwalsholat');
-// var estimasiKeberangkatan = require('./routes/estimasikeberangkatan');
 // var siskohat = require('./routes/siskohat');
 
 var app = express();
@@ -45,11 +45,11 @@ app.use('/konsumsi', konsumsi);
 app.use('/akomodasi', akomodasi);
 app.use('/kritiksaran', kritiksaran);
 app.use('/jadwalpenerbangan', jadwalPenerbangan);
+app.use('/estimasi', estimasiKeberangkatan);
 app.use('/hajipedia', hajipedia);
 // app.use('/siskohat', siskohat)
 // app.use('/cuaca', cuaca);
 // app.use('/jadwalsholat', jadwalSholat);
-// app.use('/estimasi', estimasiKeberangkatan);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
