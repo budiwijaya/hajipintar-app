@@ -27,6 +27,7 @@ class Konsumsi {
       fotoKonsumsi: req.file.cloudStoragePublicUrl
     })
     .then(dataKonsumsi => {
+      console.log(dataKonsumsi);
       res.send({
         Message: 'Data Berhasil Di Simpan Di Database!',
         Data: dataKonsumsi
@@ -80,6 +81,7 @@ class Konsumsi {
      waktuKonsumsi: req.body.waktuKonsumsi
     })
     .then(dataKonsumsi => {
+      console.log(dataKonsumsi);
       if (dataKonsumsi.length == 0) {
         res.send('Data Tidak Ditemukan Atau Pencarian Salah!!!')
       } else {

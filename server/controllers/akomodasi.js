@@ -22,7 +22,7 @@ class Akomodasi {
 
     for (var i = 0; i < req.files.length; i++) {
       // console.log(req.files);
-        imageGallery.push(req.files[i].originalname)
+        imageGallery.push(req.files[i].cloudStoragePublicUrl)
     }
 
     AkomodasiModel.create({
@@ -33,7 +33,7 @@ class Akomodasi {
       kapasitas: req.body.kapasitas,
       // fasilitas: req.body.fasilitas,
       alamat: req.body.alamat,
-      fotoHotel:  imageGallery,
+      fotoHotel:  imageGallery.cloudStoragePublicUrl,
       kloter: req.body.kloter
     })
     .then(dataAkomodasi => {
