@@ -21,6 +21,7 @@ var kritiksaran = require('./routes/kritiksaran');
 // var jadwalPenerbangan = require('./routes/jadwalpenerbangan');
 // var jadwalSholat = require('./routes/jadwalsholat');
 // var estimasiKeberangkatan = require('./routes/estimasikeberangkatan');
+var siskohat = require('./routes/siskohat');
 
 var app = express();
 
@@ -42,6 +43,7 @@ app.use('/moneyconvert', moneyConvert);
 app.use('/konsumsi', konsumsi);
 app.use('/akomodasi', akomodasi);
 app.use('/kritiksaran', kritiksaran);
+app.use('/siskohat', siskohat)
 // app.use('/cuaca', cuaca);
 // app.use('/jadwal', jadwalPenerbangan);
 // app.use('/jadwalsholat', jadwalSholat);
