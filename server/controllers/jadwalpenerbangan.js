@@ -8,8 +8,10 @@ class Jadwal {
   }
 
   static findJadwal(req, res) {
-    axios.get('http://10.100.100.120:8095/ws/getjadwalhp?tahun=1439&emb=JKS')
+    // axios.get('http://10.100.100.120:8095/ws/getjadwalhp?tahun=1439&emb=JKS')
+      axios.get('http://118.97.69.173:8095/ws/getjadwalhp?tahun=1439&emb=JKS')
     .then(function(response){
+      console.log(response);
     console.log(response.data); // ex.: { user: 'Your User'}
     console.log(response.status); // ex.: 200
     res.send(response.data)
