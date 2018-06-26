@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 
 let akomodasiSchema = new Schema({
   lokasi: { type: String, required: true },
-  sektor: { type: Number, required: true },
-  nomorHotel: { type: Number, required: true },
+  sektor: { type: String, required: true },
+  nomorHotel: { type: String, required: true },
   namaHotel: { type: String, required: true },
   kapasitas: { type: Number, required: true },
   // fasilitas: [{
