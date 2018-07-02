@@ -8,8 +8,8 @@ let akomodasiMadinahSchema = new Schema({
   namaHotel: { type: String, required: true },
   kapasitas: { type: Number, required: true },
   wilayah: { type: String, required: true },
-  checkIn: { type: Date, required: true, default: Date.now() },
-  checkOut: { type: Date, required: true, default: Date.now() },
+  checkIn: { type: String },
+  checkOut: { type: String },
   fotoHotel: { type: String }
 }, { timestamps: true })
 
