@@ -4,22 +4,6 @@ const express = require('express');
 const router = express.Router();
 const AkomodasiController = require('../controllers/akomodasi');
 const images = require('../helpers/image');
-// const multer = require('multer');
-//
-// let storage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//         cb(null, 'public/images/akomodasi')
-//     },
-//     filename: (req, file, cb) => {
-//       cb(null, file.originalname)
-//     }
-// });
-//
-// let upload = multer({
-//     storage: storage,
-//     limits: { fileSize: 5 * 1024 * 1024 }
-// });
-
 
 router.get('/', AkomodasiController.findAllAkomodasi);
 

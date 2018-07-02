@@ -16,6 +16,7 @@ var rph = require('./routes/rph');
 var moneyConvert = require('./routes/moneyconvert');
 var konsumsi = require('./routes/konsumsi');
 var akomodasi = require('./routes/akomodasi');
+var akomodasiMadinah = require('./routes/akomodasiMadinah')
 var kritiksaran = require('./routes/kritiksaran');
 var jadwalPenerbangan = require('./routes/jadwalpenerbangan');
 var estimasiKeberangkatan = require('./routes/estimasikeberangkatan');
@@ -41,6 +42,7 @@ app.use('/rph', rph);
 app.use('/moneyconvert', moneyConvert);
 app.use('/konsumsi', konsumsi);
 app.use('/akomodasi', akomodasi);
+app.use('/akomodasiMadinah', akomodasiMadinah)
 app.use('/kritiksaran', kritiksaran);
 app.use('/jadwalpenerbangan', jadwalPenerbangan);
 app.use('/estimasi', estimasiKeberangkatan);
