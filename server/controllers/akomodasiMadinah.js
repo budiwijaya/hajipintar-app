@@ -20,7 +20,6 @@ class AkomodasiMadinah {
   static createAkomodasi(req, res) {
     AkomodasiMadinahModel.create({
       kloter: req.body.kloter,
-      jumlah: req.body.jumlah,
       namaHotel: req.body.namaHotel,
       kapasitas: req.body.kapasitas,
       wilayah: req.body.wilayah,
@@ -43,7 +42,6 @@ class AkomodasiMadinah {
     AkomodasiMadinahModel.findOneAndUpdate({ _id : req.params.id }, {
       $set: {
         kloter: req.body.kloter,
-        jumlah: req.body.jumlah,
         namaHotel: req.body.namaHotel,
         kapasitas: req.body.kapasitas,
         wilayah: req.body.wilayah,

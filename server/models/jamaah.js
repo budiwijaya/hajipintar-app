@@ -8,7 +8,7 @@ class Jamaah {
   }
 
   static findJamaah(noporsi) {
-    let url = `http://118.97.69.173:8095/ws/getjamaahhp?tahun=1438&no_porsi=${noporsi}`
+    let url = `http://118.97.69.173:8095/ws/getjamaahhp?tahun=1439&no_porsi=${noporsi}`
     let promise = new Promise(function(resolve, reject) {
       request({
         url: url,
