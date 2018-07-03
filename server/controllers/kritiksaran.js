@@ -19,6 +19,7 @@ class KritikSaran {
 
   static createKritikSaran(req, res) {
     KritikSaranModel.create({
+      nama: req.body.nama,
       jenisPesan: req.body.jenisPesan,
       jenisPelayanan: req.body.jenisPelayanan,
       isiPesan: req.body.isiPesan
@@ -37,6 +38,7 @@ class KritikSaran {
   static updateKritikSaran(req, res) {
     KritikSaranModel.findOneAndUpdate({ _id : req.params.id }, {
       $set : {
+        nama: req.body.nama,
         jenisPesan: req.body.jenisPesan,
         jenisPelayanan: req.body.jenisPelayanan,
         isiPesan: req.body.isiPesan,
