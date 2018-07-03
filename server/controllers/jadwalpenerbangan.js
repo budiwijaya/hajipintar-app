@@ -9,7 +9,7 @@ class JadwalPenerbangan {
   }
 
   static penerbanganInfo(req, res) {
-    JadwalPenerbanganModel.findJadwalPenerbangan(req.body.emb)
+    JadwalPenerbanganModel.findJadwalPenerbangan(req.body.emb,req.body.kloter)
     .then(dataPenerbangan => {
       res.send(dataPenerbangan)
     })

@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let kritiksaranSchema = new Schema({
+  nama: { type: String, required: true},
   jenisPesan: { type: String, required: true },
   jenisPelayanan: { type: String, required: true },
   isiPesan: { type: String, required: true }

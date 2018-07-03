@@ -7,8 +7,8 @@ class JadwalPenerbangan {
 
   }
 
-  static findJadwalPenerbangan(emb) {
-    let url = `http://118.97.69.173:8095/ws/getjadwalhp?tahun=1439&emb=${emb}`
+  static findJadwalPenerbangan(emb,kloter) {
+    let url = `http://118.97.69.173:8095/ws/getjadwalhp?tahun=1439&emb=${emb}&kloter=${kloter}`
     let promise = new Promise(function(resolve, reject) {
       request({
         url: url,
