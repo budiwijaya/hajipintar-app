@@ -22,6 +22,7 @@ class AkomodasiMadinah {
       kloter: req.body.kloter,
       namaHotel: req.body.namaHotel,
       kapasitas: req.body.kapasitas,
+      longLat: req.body.longlat,
       wilayah: req.body.wilayah,
       checkIn: req.body.checkIn,
       checkOut: req.body.checkOut,
@@ -44,6 +45,7 @@ class AkomodasiMadinah {
         kloter: req.body.kloter,
         namaHotel: req.body.namaHotel,
         kapasitas: req.body.kapasitas,
+        longLat: req.body.longlat,
         wilayah: req.body.wilayah,
         checkIn: req.body.checkIn,
         checkOut: req.body.checkOut,
@@ -51,6 +53,23 @@ class AkomodasiMadinah {
         updatedAt: new Date()
       }
     }, { new : true })
+    .then(dataAkomodasi => {
+      res.send({
+        Message: 'Data Anda Berhasil Di Update!',
+        Data: dataAkomodasi
+      })
+    })
+    .catch(err => {
+      res.send(err)
+    })
+  }
+
+  static updateLonglat(req, res) {
+    AkomodasiMadinahModel.findOneAndUpdate({ _id : req.params.id }, {
+      $set: {
+        longLat: req.body.longlat
+      }
+    }, { new: true })
     .then(dataAkomodasi => {
       res.send({
         Message: 'Data Anda Berhasil Di Update!',

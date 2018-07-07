@@ -24,6 +24,7 @@ class Akomodasi {
       nomorHotel: req.body.nomorHotel,
       namaHotel: req.body.namaHotel,
       kapasitas: req.body.kapasitas,
+      longLat: req.body.longlat,
       // fasilitas: req.body.fasilitas,
       alamat: req.body.alamat,
       fotoHotel:  req.file.cloudStoragePublicUrl,
@@ -49,6 +50,7 @@ class Akomodasi {
         nomorHotel: req.body.nomorHotel,
         namaHotel: req.body.namaHotel,
         kapasitas: req.body.kapasitas,
+        longLat: req.body.longlat,
         // fasilitas: req.body.fasilitas,
         alamat: req.body.alamat,
         fotoHotel:  req.file.cloudStoragePublicUrl,
@@ -56,6 +58,23 @@ class Akomodasi {
         updatedAt: new Date()
       }
     }, { new : true })
+    .then(dataAkomodasi => {
+      res.send({
+        Message: 'Data Anda Berhasil Di Update!',
+        Data: dataAkomodasi
+      })
+    })
+    .catch(err => {
+      res.send(err)
+    })
+  }
+
+  static updateLonglat(req, res) {
+    AkomodasiModel.findOneAndUpdate({ _id : req.params.id }, {
+      $set: {
+        longLat: req.body.longlat
+      }
+    }, { new: true })
     .then(dataAkomodasi => {
       res.send({
         Message: 'Data Anda Berhasil Di Update!',

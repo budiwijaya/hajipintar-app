@@ -11,6 +11,8 @@ router.post('/', images.multer.single('fotoHotel'), images.sendUploadToGCS, Akom
 
 router.put('/:id', images.multer.single('fotoHotel'), images.sendUploadToGCS, AkomodasiController.updateAkomodasi);
 
+router.patch('/:id', AkomodasiController.updateLonglat);
+
 router.delete('/:id', AkomodasiController.deleteAkomodasi);
 
 router.post('/cari', AkomodasiController.searchAkomodasi);

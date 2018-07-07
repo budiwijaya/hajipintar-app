@@ -9,6 +9,7 @@ let akomodasiSchema = new Schema({
   nomorHotel: { type: String, required: true },
   namaHotel: { type: String, required: true },
   kapasitas: { type: Number, required: true },
+  longLat: { type: String },
   // fasilitas: [{
   //   type: String,
   //   required: true
