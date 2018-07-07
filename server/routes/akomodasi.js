@@ -21,4 +21,6 @@ router.post('/carisektor', AkomodasiController.searchSektor);
 
 router.post('/carikloter', AkomodasiController.searchKloter);
 
+router.post('/carikloternya', AkomodasiController.cariKloter);
+
 module.exports = router;
