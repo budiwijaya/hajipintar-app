@@ -136,6 +136,24 @@ class Akomodasi {
     })
   }
 
+  static cariKloter(req, res) {
+    AkomodasiModel.find().where('lokasi').equals(req.body.lokasi).
+    where('kloter').equals(req.body.kloter)
+    .then(dataAkomodasi => {
+      if (dataAkomodasi.length == 0) {
+        res.send('Data Tidak Di Temukan atau Data Yang Anda Masukan Salah!!')
+      } else {
+        res.send({
+          Message: 'Data Berhasil Di Temukan',
+          Data: dataAkomodasi
+        })
+      }
+    })
+    .catch(err => {
+      res.send(err)
+    })
+  }
+
   static searchKloter(req, res) {
     AkomodasiModel.find().where('lokasi').equals(req.body.lokasi).
     where('kloter').equals(req.body.kloter)
