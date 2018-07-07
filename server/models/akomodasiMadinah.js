@@ -7,6 +7,7 @@ let akomodasiMadinahSchema = new Schema({
   kloter: { type: String, required: true },
   namaHotel: { type: String, required: true },
   kapasitas: { type: Number, required: true },
+  longLat: { type: String },
   wilayah: { type: String, required: true },
   checkIn: { type: String },
   checkOut: { type: String },
