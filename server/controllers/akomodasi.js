@@ -98,6 +98,24 @@ class Akomodasi {
       res.send(err)
     })
   }
+  
+  static searchSektor(req, res) {
+    AkomodasiModel.find().where('lokasi').equals(req.body.lokasi).
+    where('sektor').equals(req.body.sektor)
+    .then(dataAkomodasi => {
+      if (dataAkomodasi.length == 0) {
+        res.send('Data Tidak Di Temukan atau Data Yang Anda Masukan Salah!!')
+      } else {
+        res.send({
+          Message: 'Data Berhasil Di Temukan',
+          Data: dataAkomodasi
+        })
+      }
+    })
+    .catch(err => {
+      res.send(err)
+    })
+  }
 
 }
 
