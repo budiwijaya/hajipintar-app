@@ -15,4 +15,6 @@ router.delete('/:id', AkomodasiController.deleteAkomodasi);
 
 router.post('/cari', AkomodasiController.searchAkomodasi);
 
+router.post('/carisektor', AkomodasiController.searchSektor);
+
 module.exports = router;
