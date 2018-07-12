@@ -25,7 +25,7 @@ class Jamaah {
   }
 
   static findJamaahPaspor(paspor,ttl) {
-    let url = `http://118.97.69.173:8095/ws/getjamaahbypasporhp?tgl_lahir=${ttl}&no_paspor=${paspor}`
+    let url = `http://118.97.69.173:8095/ws/getjamaahbypasporhp?no_paspor=${paspor}&tgl_lahir=${ttl}`
     let promise = new Promise(function(resolve, reject) {
       request({
         url: url,
