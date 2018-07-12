@@ -6,4 +6,6 @@ const JamaahController = require('../controllers/jamaah');
 
 router.post('/info', JamaahController.jamaahInfo);
 
+router.post('/infopaspor', JamaahController.jamaahInfoPaspor);
+
 module.exports = router;
