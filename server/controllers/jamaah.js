@@ -19,7 +19,7 @@ class Jamaah {
   }
 
   static jamaahInfoPaspor(req, res) {
-    JamaahModel.findJamaahPaspor(req.body.tanggalLahir, req.body.nopaspor)
+    JamaahModel.findJamaahPaspor(req.body.nopaspor, req.body.ttl)
     .then(dataJamaah => {
       res.send(dataJamaah)
     })
