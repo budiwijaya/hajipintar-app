@@ -24,6 +24,23 @@ class Jamaah {
     return promise;
   }
 
+  static findJamaahPaspor(paspor,ttl) {
+    let url = `http://118.97.69.173:8095/ws/getjamaahbypasporhp?tgl_lahir=${ttl}&no_paspor=${paspor}`
+    let promise = new Promise(function(resolve, reject) {
+      request({
+        url: url,
+        json: true
+      }, function(error, data) {
+        if(!error) {
+          resolve(data)
+        } else {
+          reject(error)
+        }
+      })
+    })
+    return promise;
+  }
+
 }
 
 module.exports = Jamaah;
