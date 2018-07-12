@@ -17,7 +17,17 @@ class Jamaah {
       res.send(err)
     })
   }
-  
+
+  static jamaahInfoPaspor(req, res) {
+    JamaahModel.findJamaahPaspor(req.body.tanggalLahir, req.body.nopaspor)
+    .then(dataJamaah => {
+      res.send(dataJamaah)
+    })
+    .catch(err => {
+      res.send(err)
+    })
+  }
+
 }
 
 module.exports = Jamaah;
