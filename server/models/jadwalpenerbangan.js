@@ -17,6 +17,7 @@ class JadwalPenerbangan {
         if(!error) {
           resolve(data)
         } else {
+          console.log(error)
           reject(error)
         }
       })

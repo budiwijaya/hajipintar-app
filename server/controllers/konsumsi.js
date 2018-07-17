@@ -72,16 +72,10 @@ class Konsumsi {
   }
 
   static searchKonsumsi(req, res) {
-    KonsumsiModel.find({
-     lokasi : req.body.lokasi,
-     $or: [
-       { tanggalKonsumsi: req.body.tanggalKonsumsi },
-       { hariKonsumsi: req.body.hariKonsumsi }
-     ],
-     waktuKonsumsi: req.body.waktuKonsumsi
-    })
+    KonsumsiModel.find().where('lokasi').equals(req.body.lokasi).
+    where('hariKonsumsi').equals(req.body.hariKonsumsi).where('waktuKonsumsi').
+    equals(req.body.waktuKonsumsi)
     .then(dataKonsumsi => {
-      console.log(dataKonsumsi);
       if (dataKonsumsi.length == 0) {
         res.send('Data Tidak Ditemukan Atau Pencarian Salah!!!')
       } else {
